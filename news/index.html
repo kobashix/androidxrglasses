@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/assets/css/tailwind.css">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:#080c18;color:#f0f4ff;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}.skip-link{position:absolute;top:-100px;left:1rem;background:#00c8ff;color:#080c18;padding:.5rem 1rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.875rem;transition:top .2s;z-index:9999}.skip-link:focus{top:0}</style>
+  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:#fff;color:#0f172a;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}.skip-link{position:absolute;top:-100px;left:1rem;background:#2563eb;color:#fff;padding:.5rem 1rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.875rem;transition:top .2s;z-index:9999}.skip-link:focus{top:0}</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,43 +27,41 @@
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<header id="site-header" class="sticky top-0 z-40 header-glass border-b border-xr-border" role="banner">
-  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+<header id="site-header" class="sticky top-0 z-40 bg-xr-header border-b border-xr-header-2" role="banner">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
     <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AndroidXRGlasses.com — Home">
-      <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:linear-gradient(135deg,#00c8ff,#a78bfa);" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M9 1.5 16.5 5.5V12.5L9 16.5 1.5 12.5V5.5Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9" cy="9" r="2.5" fill="white"/></svg>
-      </div>
-      <span class="font-bold text-xr-text-1 text-sm hidden sm:block">AndroidXR<span class="text-xr-cyan">Glasses</span><span class="text-xr-muted">.com</span></span>
+      <img src="/assets/img/favicon.svg" width="26" height="26" alt="" aria-hidden="true">
+      <span class="text-white font-bold text-sm hidden sm:block">AndroidXR<span class="text-blue-400">Glasses</span><span class="text-slate-500">.com</span></span>
     </a>
     <nav class="hidden md:flex items-center gap-0.5" aria-label="Primary navigation">
-      <a href="/news/"         class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface text-xr-text-1" aria-current="page">News</a>
-      <a href="/wiki/"         class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">Wiki</a>
-      <a href="/wiki/devices/" class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">Devices</a>
-      <a href="/wiki/compare/" class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">Compare</a>
-      <a href="/about/"        class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">About</a>
+      <a href="/news/"         class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800 text-white" aria-current="page">News</a>
+      <a href="/wiki/"         class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">Wiki</a>
+      <a href="/wiki/devices/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">Devices</a>
+      <a href="/wiki/compare/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">Compare</a>
+      <a href="/about/"        class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">About</a>
     </nav>
     <div class="flex items-center gap-2">
-      <button id="search-trigger" class="flex items-center gap-2 text-xr-text-3 hover:text-xr-text-1 bg-xr-surface border border-xr-border rounded-lg px-3 py-2 text-sm transition-colors" aria-label="Search" aria-expanded="false">
+      <button id="search-trigger" class="flex items-center gap-2 text-slate-400 hover:text-white bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-sm transition-colors" aria-label="Search" aria-expanded="false">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <span class="hidden sm:inline">Search</span>
       </button>
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-xr-text-3 hover:text-xr-text-1 rounded-lg hover:bg-xr-surface" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
-  <nav id="mobile-menu" class="md:hidden hidden border-t border-xr-border" aria-label="Mobile navigation">
+  <nav id="mobile-menu" class="md:hidden hidden border-t border-slate-800" aria-label="Mobile navigation">
     <div class="max-w-8xl mx-auto px-4 py-4 flex flex-col gap-1">
-      <a href="/news/"         class="nav-link px-3 py-2.5 rounded-lg hover:bg-xr-surface">News</a>
-      <a href="/wiki/"         class="nav-link px-3 py-2.5 rounded-lg hover:bg-xr-surface">Wiki</a>
-      <a href="/wiki/devices/" class="nav-link px-3 py-2.5 rounded-lg hover:bg-xr-surface">Devices</a>
-      <a href="/about/"        class="nav-link px-3 py-2.5 rounded-lg hover:bg-xr-surface">About</a>
+      <a href="/news/"         class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">News</a>
+      <a href="/wiki/"         class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">Wiki</a>
+      <a href="/wiki/devices/" class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">Devices</a>
+      <a href="/about/"        class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">About</a>
     </div>
   </nav>
 </header>
 <div id="search-overlay" class="fixed inset-0 z-50 bg-xr-bg/80 hidden" style="backdrop-filter:blur(12px)" role="dialog" aria-modal="true" aria-label="Site search">
   <div class="max-w-2xl mx-auto mt-20 px-4">
-    <div class="bg-xr-surface border border-xr-border rounded-2xl overflow-hidden shadow-2xl">
+    <div class="bg-white border border-xr-border rounded-xl overflow-hidden shadow-2xl">
       <div class="flex items-center gap-3 px-4 py-3.5 border-b border-xr-border">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b9ab5" stroke-width="2" class="shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input id="search-input" type="search" placeholder="Search&hellip;" class="flex-1 bg-transparent text-xr-text-1 placeholder-xr-muted outline-none text-sm">
@@ -90,11 +88,11 @@
   <!-- Category filters -->
   <div class="flex flex-wrap gap-2 mb-10" role="group" aria-label="Filter by category">
     <a href="/news/"                    class="tag-news">All</a>
-    <a href="/news/?cat=hardware"       class="tag bg-xr-surface border border-xr-border text-xr-text-3 hover:text-xr-text-1">Hardware</a>
-    <a href="/news/?cat=software"       class="tag bg-xr-surface border border-xr-border text-xr-text-3 hover:text-xr-text-1">Software &amp; AI</a>
-    <a href="/news/?cat=partnerships"   class="tag bg-xr-surface border border-xr-border text-xr-text-3 hover:text-xr-text-1">Partnerships</a>
-    <a href="/news/?cat=analysis"       class="tag bg-xr-surface border border-xr-border text-xr-text-3 hover:text-xr-text-1">Analysis</a>
-    <a href="/news/?cat=reviews"        class="tag bg-xr-surface border border-xr-border text-xr-text-3 hover:text-xr-text-1">Reviews</a>
+    <a href="/news/?cat=hardware"       class="tag bg-xr-surface border border-xr-border text-slate-400 hover:text-white">Hardware</a>
+    <a href="/news/?cat=software"       class="tag bg-xr-surface border border-xr-border text-slate-400 hover:text-white">Software &amp; AI</a>
+    <a href="/news/?cat=partnerships"   class="tag bg-xr-surface border border-xr-border text-slate-400 hover:text-white">Partnerships</a>
+    <a href="/news/?cat=analysis"       class="tag bg-xr-surface border border-xr-border text-slate-400 hover:text-white">Analysis</a>
+    <a href="/news/?cat=reviews"        class="tag bg-xr-surface border border-xr-border text-slate-400 hover:text-white">Reviews</a>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -175,7 +173,7 @@
   </div>
 </main>
 
-<footer class="border-t border-xr-border bg-xr-surface mt-16" role="contentinfo">
+<footer class="border-t border-xr-border bg-xr-header mt-12" role="contentinfo">
   <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
     <p class="text-xr-muted">&copy; 2026 AndroidXRGlasses.com. Not affiliated with Google LLC or Samsung Electronics.</p>
     <div class="flex items-center gap-5">
