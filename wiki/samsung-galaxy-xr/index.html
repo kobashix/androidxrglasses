@@ -25,8 +25,8 @@
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:#080c18;color:#f0f4ff;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-    .skip-link{position:absolute;top:-100px;left:1rem;background:#00c8ff;color:#080c18;padding:.5rem 1rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.875rem;transition:top .2s;z-index:9999}
+    body{background:#fff;color:#0f172a;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    .skip-link{position:absolute;top:-100px;left:1rem;background:#2563eb;color:#fff;padding:.5rem 1rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.875rem;transition:top .2s;z-index:9999}
     .skip-link:focus{top:0}
   </style>
 
@@ -121,7 +121,7 @@
 </header>
 
 <!-- Search Overlay -->
-<div id="search-overlay" class="fixed inset-0 z-50 bg-xr-bg/80 hidden" style="backdrop-filter:blur(12px)" role="dialog" aria-modal="true" aria-label="Site search">
+<div id="search-overlay" class="fixed inset-0 z-50 bg-black/50 hidden" style="backdrop-filter:blur(12px)" role="dialog" aria-modal="true" aria-label="Site search">
   <div class="max-w-2xl mx-auto mt-20 px-4">
     <div class="bg-white border border-xr-border rounded-xl overflow-hidden shadow-2xl">
       <div class="flex items-center gap-3 px-4 py-3.5 border-b border-xr-border">
@@ -182,12 +182,12 @@
           <div class="px-5 py-3">
             <p class="text-xr-text-3 text-xs font-bold uppercase tracking-wider mb-3">Display</p>
             <div class="space-y-0">
-              <div class="spec-row"><span class="spec-label">Display type</span><span class="spec-value">Dual Micro-OLED</span></div>
-              <div class="spec-row"><span class="spec-label">Resolution per eye</span><span class="spec-value">3,552 &times; 3,840 pixels</span></div>
-              <div class="spec-row"><span class="spec-label">Total pixels</span><span class="spec-value">~27.2 million (vs. Apple Vision Pro&#8217;s 23M)</span></div>
-              <div class="spec-row"><span class="spec-label">Refresh rate</span><span class="spec-value">72Hz default, 90Hz maximum</span></div>
-              <div class="spec-row"><span class="spec-label">Field of view</span><span class="spec-value">109&deg; horizontal (wider than Apple Vision Pro&#8217;s 100&deg;)</span></div>
-              <div class="spec-row"><span class="spec-label">Passthrough</span><span class="spec-value">Full-color mixed reality passthrough</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Display type</span><span class="spec-value text-slate-800">Dual Micro-OLED</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Resolution per eye</span><span class="spec-value text-slate-800">3,552 &times; 3,840 pixels</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Total pixels</span><span class="spec-value text-slate-800">~27.2 million (vs. Apple Vision Pro&#8217;s 23M)</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Refresh rate</span><span class="spec-value text-slate-800">72Hz default, 90Hz maximum</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Field of view</span><span class="spec-value text-slate-800">109&deg; horizontal (wider than Apple Vision Pro&#8217;s 100&deg;)</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Passthrough</span><span class="spec-value text-slate-800">Full-color mixed reality passthrough</span></div>
             </div>
           </div>
 
@@ -195,9 +195,9 @@
           <div class="px-5 py-3">
             <p class="text-xr-text-3 text-xs font-bold uppercase tracking-wider mb-3">Performance</p>
             <div class="space-y-0">
-              <div class="spec-row"><span class="spec-label">Chipset</span><span class="spec-value">Qualcomm Snapdragon XR2+ Gen 2</span></div>
-              <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-value">16GB LPDDR5</span></div>
-              <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">256GB UFS 3.1 (single configuration)</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Chipset</span><span class="spec-value text-slate-800">Qualcomm Snapdragon XR2+ Gen 2</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">RAM</span><span class="spec-value text-slate-800">16GB LPDDR5</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Storage</span><span class="spec-value text-slate-800">256GB UFS 3.1 (single configuration)</span></div>
             </div>
           </div>
 
@@ -205,10 +205,10 @@
           <div class="px-5 py-3">
             <p class="text-xr-text-3 text-xs font-bold uppercase tracking-wider mb-3">Software</p>
             <div class="space-y-0">
-              <div class="spec-row"><span class="spec-label">Operating system</span><span class="spec-value">Android XR</span></div>
-              <div class="spec-row"><span class="spec-label">AI assistant</span><span class="spec-value">Google Gemini (built-in platform layer)</span></div>
-              <div class="spec-row"><span class="spec-label">App compatibility</span><span class="spec-value">Android apps (via virtual windows) + native XR apps</span></div>
-              <div class="spec-row"><span class="spec-label">App store</span><span class="spec-value">Google Play</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Operating system</span><span class="spec-value text-slate-800">Android XR</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">AI assistant</span><span class="spec-value text-slate-800">Google Gemini (built-in platform layer)</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">App compatibility</span><span class="spec-value text-slate-800">Android apps (via virtual windows) + native XR apps</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">App store</span><span class="spec-value text-slate-800">Google Play</span></div>
             </div>
           </div>
 
@@ -216,11 +216,11 @@
           <div class="px-5 py-3">
             <p class="text-xr-text-3 text-xs font-bold uppercase tracking-wider mb-3">Input &amp; Controls</p>
             <div class="space-y-0">
-              <div class="spec-row"><span class="spec-label">Hand tracking</span><span class="spec-value">Yes — full articulated hand tracking</span></div>
-              <div class="spec-row"><span class="spec-label">Eye tracking</span><span class="spec-value">Yes — used for foveated rendering and input</span></div>
-              <div class="spec-row"><span class="spec-label">Voice</span><span class="spec-value">Google Gemini voice interaction</span></div>
-              <div class="spec-row"><span class="spec-label">Controllers</span><span class="spec-value">Optional (sold separately)</span></div>
-              <div class="spec-row"><span class="spec-label">Head tracking</span><span class="spec-value">6DoF</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Hand tracking</span><span class="spec-value text-slate-800">Yes — full articulated hand tracking</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Eye tracking</span><span class="spec-value text-slate-800">Yes — used for foveated rendering and input</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Voice</span><span class="spec-value text-slate-800">Google Gemini voice interaction</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Controllers</span><span class="spec-value text-slate-800">Optional (sold separately)</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Head tracking</span><span class="spec-value text-slate-800">6DoF</span></div>
             </div>
           </div>
 
@@ -228,8 +228,8 @@
           <div class="px-5 py-3">
             <p class="text-xr-text-3 text-xs font-bold uppercase tracking-wider mb-3">Power</p>
             <div class="space-y-0">
-              <div class="spec-row"><span class="spec-label">Battery type</span><span class="spec-value">External tethered battery pack</span></div>
-              <div class="spec-row"><span class="spec-label">Battery life</span><span class="spec-value">~2 hours general use; ~2.5 hours 2D video</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Battery type</span><span class="spec-value text-slate-800">External tethered battery pack</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Battery life</span><span class="spec-value text-slate-800">~2 hours general use; ~2.5 hours 2D video</span></div>
             </div>
           </div>
 
@@ -237,10 +237,10 @@
           <div class="px-5 py-3">
             <p class="text-xr-text-3 text-xs font-bold uppercase tracking-wider mb-3">Pricing &amp; Availability</p>
             <div class="space-y-0">
-              <div class="spec-row"><span class="spec-label">Price</span><span class="spec-value font-semibold text-xr-text-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price">$1,800</span> <meta itemprop="priceCurrency" content="USD"> USD</span></div>
-              <div class="spec-row"><span class="spec-label">Launch date</span><span class="spec-value">October 21, 2025</span></div>
-              <div class="spec-row"><span class="spec-label">Availability</span><span class="spec-value">United States</span></div>
-              <div class="spec-row"><span class="spec-label">Launch bundle</span><span class="spec-value">Explorer Pack: 12mo Google AI Pro, YouTube Premium, Google Play Pass (if purchased by end of 2025)</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Price</span><span class="spec-value font-semibold text-xr-text-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price">$1,800</span> <meta itemprop="priceCurrency" content="USD"> USD</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Launch date</span><span class="spec-value text-slate-800">October 21, 2025</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Availability</span><span class="spec-value text-slate-800">United States</span></div>
+              <div class="spec-row"><span class="spec-label text-slate-500">Launch bundle</span><span class="spec-value text-slate-800">Explorer Pack: 12mo Google AI Pro, YouTube Premium, Google Play Pass (if purchased by end of 2025)</span></div>
             </div>
           </div>
 
@@ -248,7 +248,7 @@
       </div>
 
       <!-- Body -->
-      <div class="article-body">
+      <div class="article-body text-slate-700">
 
         <h2 id="overview">Overview</h2>
         <p>The Samsung Galaxy XR is the first device to ship running Google&#8217;s Android XR operating system. Codenamed &#8220;Project Moohan&#8221; (Korean for &#8220;infinity&#8221;), the headset was developed in close collaboration with Google and targets developers, enterprise users, and early adopters willing to pay a premium for the first Android XR experience.</p>
@@ -289,7 +289,7 @@
 
     <!-- Sidebar -->
     <aside class="lg:w-72 shrink-0 space-y-6" aria-label="Page navigation and related topics">
-      <div class="toc sticky top-24">
+      <div class="toc sticky top-24 bg-white">
         <p class="text-xr-cyan text-xs font-bold uppercase tracking-wider mb-3">On This Page</p>
         <nav aria-label="Table of contents">
           <a href="#specs"         class="toc-link">Full Specifications</a>
