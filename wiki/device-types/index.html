@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android XR Device Types: Headsets vs. AR Glasses vs. AI Frames | AndroidXRGlasses.com</title>
+  <meta name="description" content="A guide to the different hardware form factors running Android XR: Mixed Reality headsets, optical AR glasses, smart glasses, and AI frames.">
+  <link rel="canonical" href="https://androidxrglasses.com/wiki/device-types/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:#fff;color:#0f172a;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}.skip-link{position:absolute;top:-100px;left:1rem;background:#2563eb;color:#fff;padding:.5rem 1rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.875rem;transition:top .2s;z-index:9999}.skip-link:focus{top:0}</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header id="site-header" class="sticky top-0 z-40 bg-xr-header border-b border-xr-header-2" role="banner">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AndroidXRGlasses.com — Home">
+      <img src="/assets/img/favicon.svg" width="26" height="26" alt="" aria-hidden="true">
+      <span class="text-white font-bold text-sm hidden sm:block">AndroidXR<span class="text-blue-400">Glasses</span><span class="text-slate-500">.com</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-0.5" aria-label="Primary navigation">
+      <a href="/news/"         class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">News</a>
+      <a href="/wiki/"         class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800 text-white" aria-current="page">Wiki</a>
+      <a href="/wiki/devices/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">Devices</a>
+      <a href="/wiki/compare/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">Compare</a>
+      <a href="/about/"        class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">About</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button id="search-trigger" class="flex items-center gap-2 text-slate-400 hover:text-white bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-sm transition-colors" aria-label="Search" aria-expanded="false">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span class="hidden sm:inline">Search</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <nav class="breadcrumb mb-8" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/wiki/">Wiki</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="text-xr-text-1">Device Types</span>
+  </nav>
+
+  <article class="max-w-4xl">
+    <header class="mb-10">
+      <span class="tag-wiki mb-3 inline-block">Platform Guide</span>
+      <h1 class="text-3xl sm:text-4xl font-bold leading-tight mb-4">Android XR Device Types</h1>
+      <p class="text-xr-text-2 text-lg leading-relaxed">
+        Android XR is a unified platform designed to scale across multiple hardware categories. Understanding the differences between headsets, AR glasses, and AI frames is critical to choosing the right device for your needs.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <!-- MR Headsets -->
+      <div class="bg-xr-surface border border-xr-border rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-xr-purple/20 flex items-center justify-center text-xr-purple mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12v.01M7 12v.01M17 12v.01"/></svg>
+        </div>
+        <h2 class="text-xl font-bold mb-2">Mixed Reality (MR) Headsets</h2>
+        <p class="text-sm text-xr-text-2 mb-4 leading-relaxed">High-performance devices that fully enclose the eyes. They use high-resolution cameras to "pass through" the real world to internal displays.</p>
+        <ul class="text-xs text-xr-text-3 space-y-2">
+          <li><strong>Best for:</strong> Productivity, immersive gaming, 3D design.</li>
+          <li><strong>Key Device:</strong> <a href="/wiki/samsung-galaxy-xr/" class="text-xr-blue hover:underline">Samsung Galaxy XR</a></li>
+          <li><strong>Competitor:</strong> Apple Vision Pro, Meta Quest 3</li>
+        </ul>
+      </div>
+
+      <!-- AR Glasses -->
+      <div class="bg-xr-surface border border-xr-border rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-xr-blue-tint flex items-center justify-center text-xr-blue mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/></svg>
+        </div>
+        <h2 class="text-xl font-bold mb-2">Augmented Reality (AR) Glasses</h2>
+        <p class="text-sm text-xr-text-2 mb-4 leading-relaxed">Devices with transparent lenses that project digital information directly onto your physical view using optical waveguides.</p>
+        <ul class="text-xs text-xr-text-3 space-y-2">
+          <li><strong>Best for:</strong> On-the-go navigation, heads-up notifications, outdoor use.</li>
+          <li><strong>Key Device:</strong> <a href="/wiki/xreal-project-aura/" class="text-xr-blue hover:underline">XREAL Project Aura</a></li>
+          <li><strong>Competitor:</strong> Magic Leap 2, Microsoft HoloLens</li>
+        </ul>
+      </div>
+
+      <!-- Smart Glasses -->
+      <div class="bg-xr-surface border border-xr-border rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-xr-green/15 flex items-center justify-center text-xr-green mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+        </div>
+        <h2 class="text-xl font-bold mb-2">Smart Glasses (Display-Equipped)</h2>
+        <p class="text-sm text-xr-text-2 mb-4 leading-relaxed">Look like standard eyewear but include a small "monocular" display in one lens for contextual AI data and captions.</p>
+        <ul class="text-xs text-xr-text-3 space-y-2">
+          <li><strong>Best for:</strong> Live translation, subtle notifications, AI assistance.</li>
+          <li><strong>Key Device:</strong> Samsung XR Glasses (Display Model)</li>
+          <li><strong>Competitor:</strong> Google Glass (Historical), Vuzix Z100</li>
+        </ul>
+      </div>
+
+      <!-- AI Frames -->
+      <div class="bg-xr-surface border border-xr-border rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-xr-orange/15 flex items-center justify-center text-xr-orange mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+        </div>
+        <h2 class="text-xl font-bold mb-2">AI Frames (Audio-Only)</h2>
+        <p class="text-sm text-xr-text-2 mb-4 leading-relaxed">Lightweight glasses with no display. They use cameras, microphones, and speakers to interact with Gemini AI.</p>
+        <ul class="text-xs text-xr-text-3 space-y-2">
+          <li><strong>Best for:</strong> All-day AI interaction, hands-free calling, photo capture.</li>
+          <li><strong>Key Device:</strong> <a href="/wiki/warby-parker-android-xr/" class="text-xr-blue hover:underline">Warby Parker x Android XR</a></li>
+          <li><strong>Competitor:</strong> Ray-Ban Meta, Solos AirGo3</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="article-body text-slate-700">
+      <h2>The Platform Advantage</h2>
+      <p>Regardless of the form factor, every Android XR device shares a common app ecosystem and the same <strong>Gemini AI</strong> intelligence layer. This means an app developed for the Samsung Galaxy XR headset can scale down to provide a simplified notification interface on a pair of smart glasses.</p>
+    </section>
+  </article>
+</main>
+
+<footer class="border-t border-xr-border bg-xr-header mt-12" role="contentinfo">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+    <p class="text-xr-muted">&copy; 2026 AndroidXRGlasses.com. Not affiliated with Google LLC or Samsung Electronics.</p>
+  </div>
+</footer>
+<script defer src="/assets/js/main.js"></script>
+</body>
+</html>

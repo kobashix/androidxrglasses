@@ -14,11 +14,13 @@ const SEARCH_INDEX = [
   { title: 'Samsung Galaxy XR Review: The First Android XR Device', url: '/news/samsung-galaxy-xr-review/', type: 'news', tags: ['review', 'Samsung', 'Galaxy XR'] },
   // Wiki
   { title: 'Android XR Platform — Complete Technical Reference', url: '/wiki/android-xr-platform/', type: 'wiki', tags: ['platform', 'Google', 'OS'] },
+  { title: 'Device Types & Form Factors — Headsets vs Glasses', url: '/wiki/device-types/', type: 'wiki', tags: ['headset', 'AR', 'glasses', 'AI frames'] },
   { title: 'Samsung Galaxy XR — Full Specifications', url: '/wiki/samsung-galaxy-xr/', type: 'wiki', tags: ['Samsung', 'headset', 'specs'] },
   { title: 'XREAL Project Aura — Specifications & Overview', url: '/wiki/xreal-project-aura/', type: 'wiki', tags: ['XREAL', 'AR', 'glasses'] },
   { title: 'Gemini AI on Android XR — Features & Integration', url: '/wiki/gemini-ai-android-xr/', type: 'wiki', tags: ['Gemini', 'AI', 'Google'] },
   { title: 'Raxium MicroLED Technology — Display Deep Dive', url: '/wiki/raxium-microled/', type: 'wiki', tags: ['Raxium', 'MicroLED', 'display'] },
   { title: 'Device Database — All Android XR Devices', url: '/wiki/devices/', type: 'wiki', tags: ['devices', 'database', 'comparison'] },
+  { title: 'Compare Devices — Android XR vs. Apple & Meta', url: '/wiki/compare/', type: 'wiki', tags: ['comparison', 'Apple', 'Meta', 'benchmark'] },
   { title: 'Warby Parker × Android XR Partnership', url: '/wiki/warby-parker-android-xr/', type: 'wiki', tags: ['Warby Parker', 'glasses', 'partnership'] },
   { title: 'Gentle Monster × Android XR Partnership', url: '/wiki/gentle-monster-android-xr/', type: 'wiki', tags: ['Gentle Monster', 'glasses', 'fashion'] },
 ];
