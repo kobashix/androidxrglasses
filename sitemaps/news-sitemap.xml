@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Google News Sitemap for AndroidXRGlasses.com
+  ─────────────────────────────────────────────────────────────────────────
+  RULES:
+  · Only include articles published within the LAST 48 HOURS.
+  · Remove articles older than 48 hours — Google ignores them anyway.
+  · Regenerate/update this file on every new publish.
+  · Maximum 1,000 URLs per file.
+  · Use full ISO 8601 timestamps with timezone offset.
+  · <news:title> must exactly match the page's <title> tag.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://androidxrglasses.com/news/samsung-android-xr-glasses-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>AndroidXRGlasses.com</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-06T09:00:00-05:00</news:publication_date>
+      <news:title>Samsung Android XR Glasses Confirmed for H2 2026: 12MP Camera, Gesture Controls, Two Models</news:title>
+      <news:keywords>Samsung, Android XR, smart glasses, 2026, Qualcomm, Gemini AI</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://androidxrglasses.com/assets/img/articles/samsung-xr-glasses-2026-og.jpg</image:loc>
+      <image:title>Samsung Android XR Glasses</image:title>
+    </image:image>
+  </url>
+
+  <!--
+    ADD NEW ARTICLES ABOVE THIS LINE.
+    Remove articles once they are older than 48 hours.
+
+    Template for new articles:
+
+    <url>
+      <loc>https://androidxrglasses.com/news/SLUG/</loc>
+      <news:news>
+        <news:publication>
+          <news:name>AndroidXRGlasses.com</news:name>
+          <news:language>en</news:language>
+        </news:publication>
+        <news:publication_date>YYYY-MM-DDTHH:MM:SS-05:00</news:publication_date>
+        <news:title>EXACT PAGE TITLE HERE</news:title>
+        <news:keywords>keyword1, keyword2, keyword3</news:keywords>
+      </news:news>
+    </url>
+  -->
+
+</urlset>

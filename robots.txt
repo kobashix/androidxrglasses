@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://androidxrglasses.com/sitemap.xml
+Sitemap: https://androidxrglasses.com/sitemaps/news-sitemap.xml

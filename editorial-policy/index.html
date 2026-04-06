@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial Policy — AndroidXRGlasses.com</title>
+  <meta name="description" content="AndroidXRGlasses.com editorial standards: sourcing requirements, author credentials, fact-check procedures, correction policy, and disclosure of conflicts of interest.">
+  <link rel="canonical" href="https://androidxrglasses.com/editorial-policy/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:#080c18;color:#f0f4ff;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}.skip-link{position:absolute;top:-100px;left:1rem;background:#00c8ff;color:#080c18;padding:.5rem 1rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.875rem;transition:top .2s;z-index:9999}.skip-link:focus{top:0}</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header id="site-header" class="sticky top-0 z-40 header-glass border-b border-xr-border" role="banner">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AndroidXRGlasses.com — Home">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:linear-gradient(135deg,#00c8ff,#a78bfa);" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M9 1.5 16.5 5.5V12.5L9 16.5 1.5 12.5V5.5Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9" cy="9" r="2.5" fill="white"/></svg>
+      </div>
+      <span class="font-bold text-xr-text-1 text-sm hidden sm:block">AndroidXR<span class="text-xr-cyan">Glasses</span><span class="text-xr-muted">.com</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-0.5" aria-label="Primary navigation">
+      <a href="/news/"         class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">News</a>
+      <a href="/wiki/"         class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">Wiki</a>
+      <a href="/wiki/devices/" class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">Devices</a>
+      <a href="/about/"        class="nav-link px-3 py-2 rounded-lg hover:bg-xr-surface">About</a>
+    </nav>
+    <button id="search-trigger" class="flex items-center gap-2 text-xr-text-3 hover:text-xr-text-1 bg-xr-surface border border-xr-border rounded-lg px-3 py-2 text-sm transition-colors" aria-label="Search" aria-expanded="false">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <span class="hidden sm:inline">Search</span>
+    </button>
+  </div>
+</header>
+<div id="search-overlay" class="fixed inset-0 z-50 bg-xr-bg/80 hidden" style="backdrop-filter:blur(12px)" role="dialog" aria-modal="true" aria-label="Site search">
+  <div class="max-w-2xl mx-auto mt-20 px-4">
+    <div class="bg-xr-surface border border-xr-border rounded-2xl overflow-hidden shadow-2xl">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-xr-border">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b9ab5" stroke-width="2" class="shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="search-input" type="search" placeholder="Search&hellip;" class="flex-1 bg-transparent text-xr-text-1 placeholder-xr-muted outline-none text-sm">
+        <button id="search-close" class="text-xr-text-3 text-xs font-mono border border-xr-border rounded px-1.5 py-0.5" aria-label="Close">ESC</button>
+      </div>
+      <div id="search-results" class="p-4 max-h-96 overflow-y-auto"><p class="text-xr-text-3 text-sm text-center py-6">Start typing&hellip;</p></div>
+    </div>
+  </div>
+</div>
+
+<main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <nav class="breadcrumb mb-8" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="text-xr-text-1">Editorial Policy</span>
+  </nav>
+
+  <header class="mb-10">
+    <span class="tag-wiki mb-4 inline-block">Transparency</span>
+    <h1 class="text-4xl font-bold mb-3">Editorial Policy</h1>
+    <p class="text-xr-text-3 text-sm">Last updated: <time datetime="2026-01-01">January 1, 2026</time></p>
+  </header>
+
+  <div class="article-body space-y-0">
+
+    <h2>1. Editorial Independence</h2>
+    <p>AndroidXRGlasses.com is editorially independent. No advertiser, investor, partner, or external party has influence over our editorial decisions, article content, or fact-checking processes. Staff reporters and editors make all coverage decisions based on newsworthiness, accuracy, and relevance to our audience.</p>
+
+    <h2>2. Author Credentials &amp; Bylines</h2>
+    <p>Every article published on AndroidXRGlasses.com carries a byline identifying the author by name. Authors are identified as staff reporters, contributing editors, or named external contributors. Credentials are listed on each author&#8217;s profile page.</p>
+    <p>Editorial staff have backgrounds in one or more of: technology journalism, consumer electronics, XR/AR software development, or enterprise technology. We do not publish anonymous content except in cases involving source protection, which are disclosed with a note on the article.</p>
+
+    <h2>3. Sourcing Standards</h2>
+    <p>All factual claims in news articles must be sourced from at least one of the following:</p>
+    <ul>
+      <li>Official company announcements, press releases, or investor communications</li>
+      <li>On-the-record statements from named company representatives</li>
+      <li>Verified reporting from established technology publications (9to5Google, The Verge, Tom&#8217;s Guide, TechCrunch, Android Central, Droid-Life)</li>
+      <li>Official regulatory filings or government documents</li>
+      <li>Direct product testing or hands-on review</li>
+    </ul>
+    <p>Unverified rumors or anonymous sources are labeled as such — they are not presented as confirmed facts. We clearly distinguish between confirmed information and reported speculation.</p>
+
+    <h2>4. Wiki &amp; Specification Accuracy</h2>
+    <p>Wiki entries and device specification tables are compiled from official sources only — manufacturer press releases, official product pages, and verifiable regulatory filings. Unconfirmed specifications are marked &#8220;TBC&#8221; (to be confirmed) or &#8220;TBA&#8221; (to be announced).</p>
+    <p>Each wiki entry displays a &#8220;Last verified&#8221; date. Entries are reviewed when new official information becomes available. Readers who identify inaccuracies should email <a href="mailto:corrections@androidxrglasses.com">corrections@androidxrglasses.com</a>.</p>
+
+    <h2>5. Corrections Policy</h2>
+    <p>We correct errors promptly and transparently. When an article contains a factual error:</p>
+    <ul>
+      <li>The correction is appended to the article with a timestamp noting when it was made</li>
+      <li>The original incorrect claim is noted so readers can understand what changed</li>
+      <li>The <code>dateModified</code> schema timestamp on the article is updated</li>
+    </ul>
+    <p>We do not silently delete or alter factual claims. To submit a correction: <a href="mailto:corrections@androidxrglasses.com">corrections@androidxrglasses.com</a></p>
+
+    <h2>6. Content Labels</h2>
+    <p>All content is labeled at the article level to distinguish content types:</p>
+    <ul>
+      <li><strong class="text-xr-orange">News</strong> — reported, fact-based news coverage</li>
+      <li><strong class="text-xr-purple">Analysis</strong> — editorial interpretation of facts and trends</li>
+      <li><strong class="text-xr-orange">Review</strong> — first-hand product evaluation</li>
+      <li><strong class="text-xr-cyan">Wiki</strong> — encyclopedic reference entries</li>
+      <li><strong class="text-xr-green">Hardware</strong> — device-specific coverage</li>
+    </ul>
+    <p>Opinion pieces are clearly labeled &#8220;Opinion&#8221; and reflect only the views of the named author, not the publication as a whole.</p>
+
+    <h2>7. Conflicts of Interest &amp; Advertising</h2>
+    <p>AndroidXRGlasses.com may display advertising (including Google AdSense). Advertisements are clearly separated from editorial content and do not influence coverage decisions. We do not accept sponsored articles, native advertising, or paid placement in editorial sections.</p>
+    <p>Staff who own financial positions in companies they cover must disclose that interest in their byline notes. Staff are prohibited from trading on non-public information obtained through their reporting work.</p>
+
+    <h2>8. AI-Assisted Writing</h2>
+    <p>AndroidXRGlasses.com may use AI writing tools for drafting assistance. All AI-assisted content is reviewed, fact-checked, and edited by a human staff member before publication. The human editor takes full editorial responsibility for the final published content. We do not publish unreviewed AI-generated text.</p>
+
+    <h2>9. Contact</h2>
+    <p>Editorial inquiries: <a href="mailto:editorial@androidxrglasses.com">editorial@androidxrglasses.com</a><br>
+    Corrections: <a href="mailto:corrections@androidxrglasses.com">corrections@androidxrglasses.com</a></p>
+
+  </div>
+</main>
+
+<footer class="border-t border-xr-border bg-xr-surface mt-16" role="contentinfo">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+    <p class="text-xr-muted">&copy; 2026 AndroidXRGlasses.com. Not affiliated with Google LLC or Samsung Electronics.</p>
+    <div class="flex items-center gap-5">
+      <a href="/"        class="text-xr-muted hover:text-xr-text-3 transition-colors">Home</a>
+      <a href="/about/"  class="text-xr-muted hover:text-xr-text-3 transition-colors">About</a>
+      <a href="/privacy-policy/" class="text-xr-muted hover:text-xr-text-3 transition-colors">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script defer src="/assets/js/main.js"></script>
+</body>
+</html>
