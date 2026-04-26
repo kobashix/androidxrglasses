@@ -1,0 +1,44 @@
+name: SEO Heartbeat & Auto-Fresh
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # Runs every 12 hours
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Aggressive SEO Engine
+        run: node scripts/generate.js
+
+      - name: Rebuild Tailwind CSS
+        run: npm run build
+
+      - name: Commit Freshness Nudges
+        run: |
+          git config --global user.name "SEO Heartbeat Bot"
+          git config --global user.email "bot@androidxrglasses.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 SEO HEARTBEAT: Automated Freshness Nudge [skip ci]" && git push)
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: "5335e62d18861c4b58dbf632be4a73bc"
+          command: pages deploy . --project-name androidxrglasses --commit-dirty=true
