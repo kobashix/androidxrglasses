@@ -39,6 +39,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
+          email: ${{ secrets.CLOUDFLARE_EMAIL }}
           accountId: "5335e62d18861c4b58dbf632be4a73bc"
           command: pages deploy . --project-name androidxrglasses --commit-dirty=true
