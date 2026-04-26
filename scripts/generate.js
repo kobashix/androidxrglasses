@@ -357,6 +357,33 @@ function updateSitemap(news, wiki) {
   fs.writeFileSync(sitemapPath, xml);
 }
 
+function updateSearchIndex(news, wiki) {
+  const jsPath = path.join(ROOT, 'assets', 'js', 'main.js');
+  let js = fs.readFileSync(jsPath, 'utf8');
+  
+  const index = [];
+  news.forEach(item => {
+    index.push({
+      title: item.meta.title,
+      url: `/news/${item.slug}/`,
+      type: 'news',
+      tags: [...(item.meta.tags || []), ...(item.meta.searchTags || [])]
+    });
+  });
+  wiki.forEach(item => {
+    index.push({
+      title: item.meta.title,
+      url: `/wiki/${item.slug}/`,
+      type: 'wiki',
+      tags: [...(item.meta.tags || []), ...(item.meta.searchTags || [])]
+    });
+  });
+
+  const indexString = JSON.stringify(index, null, 2);
+  js = js.replace(/const SEARCH_INDEX = \[[\s\S]*?\];/, `const SEARCH_INDEX = ${indexString};`);
+  fs.writeFileSync(jsPath, js);
+}
+
 function main() {
   const news = loadContent(path.join(ROOT, 'content', 'news'));
   const wiki = loadContent(path.join(ROOT, 'content', 'wiki'));
@@ -364,6 +391,8 @@ function main() {
   for (const item of wiki) { ensureDir(path.join(ROOT, 'wiki', item.slug)); fs.writeFileSync(path.join(ROOT, 'wiki', item.slug, 'index.html'), renderWikiPage(item.meta, item.slug, item.bodyHtml)); }
   generateComparisonMoat(wiki);
   updateSitemap(news, wiki);
+  updateSearchIndex(news, wiki);
   console.log(`✓ SEO ENGINE v2: FAQ Bombing, Semantic Footer, Pros/Cons injected, Unicode symbols added.`);
+  console.log(`✓ SEARCH INDEX: Updated with ${news.length + wiki.length} entries.`);
 }
 main();

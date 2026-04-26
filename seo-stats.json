@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2026-04-26T17:45:25.443Z",
+    "content": {
+      "news_articles": 8,
+      "wiki_entries": 12,
+      "comparison_pages": 5,
+      "total_indexed_paths": 25
+    },
+    "engine_health": "ACTIVE",
+    "freshness_loop": "OPTIMIZED"
+  },
+  {
+    "timestamp": "2026-04-26T17:55:58.255Z",
+    "content": {
+      "news_articles": 8,
+      "wiki_entries": 12,
+      "comparison_pages": 9,
+      "total_indexed_paths": 29
+    },
+    "engine_health": "ACTIVE",
+    "freshness_loop": "OPTIMIZED"
+  }
+]

@@ -6,17 +6,232 @@
 
 // ─── Search ────────────────────────────────────────────────────────────────
 const SEARCH_INDEX = [
-  { title: "Samsung Galaxy Glasses Leak: Specs Reveal Dual-Model Strategy, 245mAh Battery, and Android XR Focus", url: "/news/samsung-galaxy-glasses-leak-specs-2026/", type: "news", tags: ["Samsung Galaxy Glasses","leak","smart glasses",2026,"Android XR","battery specs","Gemini AI"] },
-  { title: "Google I/O 2026 Preview: Android XR 2.0, Gemini 2.0, and the 'Aura' Glasses Revolution", url: "/news/google-io-2026-preview-android-xr/", type: "news", tags: ["Google I/O",2026,"Android XR 2.0","Gemini 2.0","smart glasses","rumors"] },
-  { title: "Samsung Android XR Glasses Confirmed for H2 2026: 12MP Camera, Gesture Controls, Two Models", url: "/news/samsung-android-xr-glasses-2026/", type: "news", tags: ["Samsung","Android XR","smart glasses",2026,"Qualcomm","Gemini AI"] },
-  { title: "CES 2026: Smart Glasses Everywhere, But Android XR's Promise Looms Largest", url: "/news/ces-2026-android-xr-smart-glasses/", type: "news", tags: ["CES 2026","Android XR","smart glasses","XREAL","Meta"] },
-  { title: "Google's $150M Warby Parker Bet: Inside the Android XR Eyewear Strategy", url: "/news/google-warby-parker-150m-android-xr/", type: "news", tags: ["Warby Parker","Google","Android XR","investment","eyewear"] },
-  { title: "Gucci, Balenciaga & Alexander McQueen Glasses Are Coming to Android XR", url: "/news/kering-eyewear-android-xr-gucci/", type: "news", tags: ["Kering","Gucci","Balenciaga","Android XR","fashion","luxury"] },
-  { title: "Samsung Galaxy XR Review: The First Android XR Device Is Here — At a Price", url: "/news/samsung-galaxy-xr-review/", type: "news", tags: ["review","Samsung","Galaxy XR","headset"] },
-  { title: "Qualcomm Snapdragon XR2+ Gen 3", url: "/wiki/snapdragon-xr2-plus-gen-3/", type: "wiki", tags: ["Qualcomm","Snapdragon XR2+ Gen 3","chipset","processor","specs"] },
-  { title: "Samsung Galaxy XR", url: "/wiki/samsung-galaxy-xr/", type: "wiki", tags: ["Samsung","Galaxy XR","headset","specs","price"] },
-  { title: "Android XR Platform", url: "/wiki/android-xr-platform/", type: "wiki", tags: ["Android XR","platform","Google","OS","architecture"] },
-  { title: "Raxium MicroLED Technology", url: "/wiki/raxium-microled/", type: "wiki", tags: ["Raxium","MicroLED","display","Google","technology"] },
+  {
+    "title": "CES 2026: Smart Glasses Everywhere, But Android XR's Promise Looms Largest",
+    "url": "/news/ces-2026-android-xr-smart-glasses/",
+    "type": "news",
+    "tags": [
+      "Analysis",
+      "CES 2026",
+      "CES 2026",
+      "Android XR",
+      "smart glasses",
+      "XREAL",
+      "Meta"
+    ]
+  },
+  {
+    "title": "Google I/O 2026 Preview: Android XR 2.0, Gemini 2.0, and the 'Aura' Glasses Revolution",
+    "url": "/news/google-io-2026-preview-android-xr/",
+    "type": "news",
+    "tags": [
+      "Analysis",
+      "Google",
+      "Platform",
+      "Google I/O",
+      2026,
+      "Android XR 2.0",
+      "Gemini 2.0",
+      "smart glasses",
+      "rumors"
+    ]
+  },
+  {
+    "title": "Google's $150M Warby Parker Bet: Inside the Android XR Eyewear Strategy",
+    "url": "/news/google-warby-parker-150m-android-xr/",
+    "type": "news",
+    "tags": [
+      "Partnership",
+      "Warby Parker",
+      "Warby Parker",
+      "Google",
+      "Android XR",
+      "investment",
+      "eyewear"
+    ]
+  },
+  {
+    "title": "Gucci, Balenciaga & Alexander McQueen Glasses Are Coming to Android XR",
+    "url": "/news/kering-eyewear-android-xr-gucci/",
+    "type": "news",
+    "tags": [
+      "Fashion",
+      "Partnership",
+      "Kering",
+      "Gucci",
+      "Balenciaga",
+      "Android XR",
+      "fashion",
+      "luxury"
+    ]
+  },
+  {
+    "title": "Samsung Android XR Glasses Confirmed for H2 2026: 12MP Camera, Gesture Controls, Two Models",
+    "url": "/news/samsung-android-xr-glasses-2026/",
+    "type": "news",
+    "tags": [
+      "Breaking",
+      "Hardware",
+      "Samsung",
+      "Samsung",
+      "Android XR",
+      "smart glasses",
+      2026,
+      "Qualcomm",
+      "Gemini AI"
+    ]
+  },
+  {
+    "title": "Samsung Galaxy Glasses Leak: Specs Reveal Dual-Model Strategy, 245mAh Battery, and Android XR Focus",
+    "url": "/news/samsung-galaxy-glasses-leak-specs-2026/",
+    "type": "news",
+    "tags": [
+      "Leak",
+      "Samsung",
+      "Hardware",
+      "Samsung Galaxy Glasses",
+      "leak",
+      "smart glasses",
+      2026,
+      "Android XR",
+      "battery specs",
+      "Gemini AI"
+    ]
+  },
+  {
+    "title": "Samsung Galaxy XR Review: The First Android XR Device Is Here — At a Price",
+    "url": "/news/samsung-galaxy-xr-review/",
+    "type": "news",
+    "tags": [
+      "Review",
+      "Hardware",
+      "Samsung",
+      "review",
+      "Samsung",
+      "Galaxy XR",
+      "headset"
+    ]
+  },
+  {
+    "title": "Android XR Platform",
+    "url": "/wiki/android-xr-platform/",
+    "type": "wiki",
+    "tags": [
+      "Platform",
+      "Google",
+      "OS",
+      "Android XR",
+      "platform",
+      "Google",
+      "OS",
+      "architecture"
+    ]
+  },
+  {
+    "title": "Gemini AI on Android XR",
+    "url": "/wiki/gemini-ai-android-xr/",
+    "type": "wiki",
+    "tags": [
+      "Technology",
+      "AI",
+      "Google",
+      "Gemini AI",
+      "Android XR",
+      "multimodal AI",
+      "artificial intelligence",
+      "Google assistant"
+    ]
+  },
+  {
+    "title": "Gentle Monster × Android XR",
+    "url": "/wiki/gentle-monster-android-xr/",
+    "type": "wiki",
+    "tags": [
+      "Partner",
+      "Fashion",
+      "Luxury",
+      "Gentle Monster",
+      "Android XR",
+      "luxury smart glasses",
+      "avant-garde eyewear",
+      "fashion tech"
+    ]
+  },
+  {
+    "title": "Raxium MicroLED Technology",
+    "url": "/wiki/raxium-microled/",
+    "type": "wiki",
+    "tags": [
+      "Raxium",
+      "MicroLED",
+      "Display",
+      "Raxium",
+      "MicroLED",
+      "display",
+      "Google",
+      "technology"
+    ]
+  },
+  {
+    "title": "Samsung Galaxy XR",
+    "url": "/wiki/samsung-galaxy-xr/",
+    "type": "wiki",
+    "tags": [
+      "Samsung",
+      "Headset",
+      "Specs",
+      "Samsung",
+      "Galaxy XR",
+      "headset",
+      "specs",
+      "price"
+    ]
+  },
+  {
+    "title": "Qualcomm Snapdragon XR2+ Gen 3",
+    "url": "/wiki/snapdragon-xr2-plus-gen-3/",
+    "type": "wiki",
+    "tags": [
+      "Hardware",
+      "Chipset",
+      "Qualcomm",
+      "Qualcomm",
+      "Snapdragon XR2+ Gen 3",
+      "chipset",
+      "processor",
+      "specs"
+    ]
+  },
+  {
+    "title": "Warby Parker × Android XR",
+    "url": "/wiki/warby-parker-android-xr/",
+    "type": "wiki",
+    "tags": [
+      "Partner",
+      "Fashion",
+      "Google",
+      "Warby Parker",
+      "Android XR",
+      "Google investment",
+      "smart glasses",
+      "mass market eyewear"
+    ]
+  },
+  {
+    "title": "XREAL Project Aura",
+    "url": "/wiki/xreal-project-aura/",
+    "type": "wiki",
+    "tags": [
+      "Hardware",
+      "AR",
+      "XREAL",
+      "XREAL Project Aura",
+      "AR glasses",
+      "augmented reality",
+      "spatial computing",
+      "CES 2026"
+    ]
+  }
 ];
 
 function initSearch() {
