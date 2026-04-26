@@ -16,40 +16,37 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://androidxrglasses.com/news/samsung-android-xr-glasses-2026/</loc>
+    <loc>https://androidxrglasses.com/news/samsung-galaxy-glasses-leak-specs-2026/</loc>
     <news:news>
       <news:publication>
         <news:name>AndroidXRGlasses.com</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-03-06T09:00:00-05:00</news:publication_date>
-      <news:title>Samsung Android XR Glasses Confirmed for H2 2026: 12MP Camera, Gesture Controls, Two Models</news:title>
-      <news:keywords>Samsung, Android XR, smart glasses, 2026, Qualcomm, Gemini AI</news:keywords>
+      <news:publication_date>2026-04-26T09:00:00-05:00</news:publication_date>
+      <news:title>Samsung Galaxy Glasses Leak: Specs Reveal Dual-Model Strategy, 245mAh Battery, and Android XR Focus</news:title>
+      <news:keywords>Samsung, Galaxy Glasses, leak, smart glasses, 2026, Android XR, battery specs, Gemini AI</news:keywords>
     </news:news>
     <image:image>
-      <image:loc>https://androidxrglasses.com/assets/img/articles/samsung-xr-glasses-2026-og.jpg</image:loc>
-      <image:title>Samsung Android XR Glasses</image:title>
+      <image:loc>https://androidxrglasses.com/assets/img/google-io-xr-glasses-web.jpg</image:loc>
+      <image:title>Samsung Galaxy Glasses leak details</image:title>
     </image:image>
   </url>
 
-  <!--
-    ADD NEW ARTICLES ABOVE THIS LINE.
-    Remove articles once they are older than 48 hours.
-
-    Template for new articles:
-
-    <url>
-      <loc>https://androidxrglasses.com/news/SLUG/</loc>
-      <news:news>
-        <news:publication>
-          <news:name>AndroidXRGlasses.com</news:name>
-          <news:language>en</news:language>
-        </news:publication>
-        <news:publication_date>YYYY-MM-DDTHH:MM:SS-05:00</news:publication_date>
-        <news:title>EXACT PAGE TITLE HERE</news:title>
-        <news:keywords>keyword1, keyword2, keyword3</news:keywords>
-      </news:news>
-    </url>
-  -->
+  <url>
+    <loc>https://androidxrglasses.com/news/google-io-2026-preview-android-xr/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>AndroidXRGlasses.com</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-04-26T09:00:00-05:00</news:publication_date>
+      <news:title>Google I/O 2026 Preview: Android XR 2.0, Gemini 2.0, and the 'Aura' Glasses Revolution</news:title>
+      <news:keywords>Google I/O, 2026, Android XR 2.0, Gemini 2.0, smart glasses, rumors</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://androidxrglasses.com/assets/img/android-xr-io25-web.jpg</image:loc>
+      <image:title>Google I/O 2026 Preview</image:title>
+    </image:image>
+  </url>
 
 </urlset>

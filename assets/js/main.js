@@ -6,6 +6,7 @@
 
 // ─── Search ────────────────────────────────────────────────────────────────
 const SEARCH_INDEX = [
+  { title: "Samsung Galaxy Glasses Leak: Specs Reveal Dual-Model Strategy, 245mAh Battery, and Android XR Focus", url: "/news/samsung-galaxy-glasses-leak-specs-2026/", type: "news", tags: ["Samsung Galaxy Glasses","leak","smart glasses",2026,"Android XR","battery specs","Gemini AI"] },
   { title: "Google I/O 2026 Preview: Android XR 2.0, Gemini 2.0, and the 'Aura' Glasses Revolution", url: "/news/google-io-2026-preview-android-xr/", type: "news", tags: ["Google I/O",2026,"Android XR 2.0","Gemini 2.0","smart glasses","rumors"] },
   { title: "Samsung Android XR Glasses Confirmed for H2 2026: 12MP Camera, Gesture Controls, Two Models", url: "/news/samsung-android-xr-glasses-2026/", type: "news", tags: ["Samsung","Android XR","smart glasses",2026,"Qualcomm","Gemini AI"] },
   { title: "CES 2026: Smart Glasses Everywhere, But Android XR's Promise Looms Largest", url: "/news/ces-2026-android-xr-smart-glasses/", type: "news", tags: ["CES 2026","Android XR","smart glasses","XREAL","Meta"] },
