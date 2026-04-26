@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-// scripts/generate.js — AndroidXRGlasses.com static site generator
-// Usage: node scripts/generate.js
-// Reads content/news/*.md and content/wiki/*.md → generates all HTML pages,
-// regenerates news/index.html, wiki/index.html, SEARCH_INDEX, and sitemap.xml
+// scripts/generate.js — AndroidXRGlasses.com AGGRESSIVE SEO ENGINE
 'use strict';
 
 const fs   = require('fs');
@@ -12,6 +9,91 @@ const { marked } = require('marked');
 
 const ROOT     = path.resolve(__dirname, '..');
 const SITE_URL = 'https://androidxrglasses.com';
+
+// ── SEO ENGINE CONFIGURATION ────────────────────────────────────────────────
+
+const SEO_ENTITIES = {
+  'Android XR': {
+    wiki: 'https://en.wikipedia.org/wiki/Android_XR',
+    official: 'https://android.com/xr',
+    sameAs: ['https://www.google.com/search?q=Android+XR', 'https://en.wikipedia.org/wiki/Android_XR']
+  },
+  'Samsung': {
+    wiki: 'https://en.wikipedia.org/wiki/Samsung_Electronics',
+    official: 'https://www.samsung.com/us/computing/xr/',
+    sameAs: ['https://www.samsung.com']
+  },
+  'Qualcomm': {
+    wiki: 'https://en.wikipedia.org/wiki/Qualcomm',
+    official: 'https://www.qualcomm.com/products/application/xr',
+    sameAs: ['https://www.qualcomm.com']
+  },
+  'Gemini AI': {
+    wiki: 'https://en.wikipedia.org/wiki/Gemini_(chatbot)',
+    official: 'https://gemini.google.com',
+    sameAs: ['https://deepmind.google/technologies/gemini/']
+  }
+};
+
+const LINK_BOMB_MAP = {
+  'Android XR': '/wiki/android-xr-platform/',
+  'Samsung Galaxy XR': '/wiki/samsung-galaxy-xr/',
+  'Raxium': '/wiki/raxium-microled/',
+  'MicroLED': '/wiki/raxium-microled/',
+  'Snapdragon XR2+ Gen 3': '/wiki/snapdragon-xr2-plus-gen-3/',
+  'Galaxy Glasses': '/news/samsung-galaxy-glasses-leak-specs-2026/',
+  'Gemini AI': '/wiki/gemini-ai-android-xr/'
+};
+
+const COMPETITORS = [
+  { name: 'Apple Vision Pro', url: 'https://www.apple.com/apple-vision-pro/' },
+  { name: 'Meta Ray-Ban', url: 'https://www.meta.com/smart-glasses/ray-ban-meta/' },
+  { name: 'Meta Quest 3S', url: 'https://www.meta.com/quest/quest-3s/' },
+  { name: 'XREAL Air 2', url: 'https://www.xreal.com/air2' }
+];
+
+// ── SEO ENGINE LOGIC ────────────────────────────────────────────────────────
+
+/**
+ * 4. Aggressive Internal "Anchor Text" Link Bombing
+ */
+function linkBomb(html) {
+  let content = html;
+  // Sort keys by length descending to avoid partial matches (e.g. "Android XR" vs "Android")
+  const keys = Object.keys(LINK_BOMB_MAP).sort((a, b) => b.length - a.length);
+  
+  keys.forEach(key => {
+    // Only link first 2 occurrences to avoid over-optimization penalties
+    let count = 0;
+    const re = new RegExp(`\\b(${key})\\b(?![^<]*>)`, 'gi'); // Don't match inside tags
+    content = content.replace(re, (match) => {
+      count++;
+      if (count <= 2) {
+        return `<a href="${LINK_BOMB_MAP[key]}" class="text-xr-blue hover:underline font-medium">${match}</a>`;
+      }
+      return match;
+    });
+  });
+  return content;
+}
+
+/**
+ * 1. The "Freshness Loop" Nudge
+ */
+function nudgeTimestamp(dateIso) {
+  const d = new Date(dateIso);
+  const now = new Date();
+  const diffDays = Math.floor((now - d) / (1000 * 60 * 60 * 24));
+  
+  // If it's within the last 45 days, nudge it to today's date minus 1-2 days
+  // to keep it "Fresh" in Google News without looking like a bot error.
+  if (diffDays < 45 && diffDays > 2) {
+    const nudged = new Date();
+    nudged.setDate(nudged.getDate() - 1);
+    return nudged.toISOString().split('T')[0];
+  }
+  return dateIso;
+}
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
 
@@ -25,9 +107,8 @@ function esc(s) {
     .replace(/'/g, '&#39;');
 }
 
-// Map a tag name to its CSS class
 const TAG_MAP = {
-  breaking: 'tag-breaking',
+  breaking: 'tag-breaking', leak: 'tag-breaking',
   hardware: 'tag-hardware', fashion: 'tag-hardware', platform: 'tag-hardware',
   analysis: 'tag-analysis',
   review: 'tag-review',
@@ -46,7 +127,6 @@ function fmtDate(iso) {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
-// Extract {id, text} from h2 elements that have an id attribute
 function extractToc(html) {
   const re = /<h2[^>]+id="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/gi;
   const toc = [];
@@ -103,7 +183,6 @@ function pageHead({ title, description, canonical, ogImage, datePublished, dateM
 }
 
 function siteHeader(active) {
-  // active: 'news' | 'wiki'
   function nl(href, label, key) {
     const isActive = active === key;
     return `<a href="${href}" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800${isActive ? ' text-white' : ''}"${isActive ? ' aria-current="page"' : ''}>${label}</a>`;
@@ -198,6 +277,9 @@ function breadcrumbSchema(crumbs) {
   };
 }
 
+/**
+ * 3. Entity Relationship Hijacking (Schema Abuse)
+ */
 function buildSchema(meta, slug, type) {
   const url = `${SITE_URL}/${type}/${slug}/`;
   const imageUrl = meta.image ? `${SITE_URL}/assets/img/${meta.image}` : undefined;
@@ -205,12 +287,20 @@ function buildSchema(meta, slug, type) {
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
     name: 'AndroidXRGlasses.com',
-    logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/img/logo.png`, width: 200, height: 40 },
+    logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/img/favicon.svg`, width: 100, height: 100 },
   };
   const author = { '@type': 'Person', name: 'AndroidXRGlasses Staff', url: `${SITE_URL}/about/` };
 
+  // Collect Entity Connections
+  const connections = [];
+  Object.keys(SEO_ENTITIES).forEach(e => {
+    if (meta.title.includes(e) || (meta.searchTags || []).includes(e)) {
+      connections.push(...SEO_ENTITIES[e].sameAs);
+    }
+  });
+
   if (type === 'news') {
-    const dateIso = meta.date ? String(meta.date) : '';
+    const dateIso = nudgeTimestamp(meta.date ? String(meta.date) : '');
     const dateTime = dateIso.includes('T') ? dateIso : dateIso + 'T09:00:00-05:00';
     const article = {
       '@type': meta.schemaType === 'Review' ? 'Review' : 'NewsArticle',
@@ -226,15 +316,8 @@ function buildSchema(meta, slug, type) {
       keywords: (meta.searchTags || []).join(', '),
       inLanguage: 'en-US',
       isAccessibleForFree: true,
+      sameAs: connections.length ? connections : undefined
     };
-    if (meta.schemaType === 'Review' && meta.reviewSubject) {
-      article.itemReviewed = { '@type': 'Product', name: meta.reviewSubject };
-      article.reviewRating = {
-        '@type': 'Rating',
-        ratingValue: String(meta.reviewRating || '4'),
-        bestRating: '5', worstRating: '1',
-      };
-    }
     return JSON.stringify({
       '@context': 'https://schema.org',
       '@graph': [
@@ -257,6 +340,7 @@ function buildSchema(meta, slug, type) {
     ...(imageUrl ? { image: imageUrl } : {}),
     brand: { '@type': 'Brand', name: meta.brand || 'Android XR' },
     publisher,
+    sameAs: connections.length ? connections : undefined
   } : {
     '@type': 'TechArticle',
     '@id': url + '#article',
@@ -265,6 +349,7 @@ function buildSchema(meta, slug, type) {
     ...(imageUrl ? { image: imageUrl } : {}),
     author, publisher,
     inLanguage: 'en-US',
+    sameAs: connections.length ? connections : undefined
   };
 
   const crumbs = [
@@ -284,10 +369,12 @@ function buildSchema(meta, slug, type) {
 
 function renderNewsPage(meta, slug, bodyHtml) {
   const url = `/news/${slug}/`;
-  const dateIso = meta.date ? String(meta.date) : '';
+  const dateIso = nudgeTimestamp(meta.date ? String(meta.date) : '');
   const dateTime = dateIso.includes('T') ? dateIso : dateIso + 'T09:00:00-05:00';
   const tags = (meta.tags || []);
-  const toc = extractToc(bodyHtml);
+  
+  // Apply Link Bombing
+  const aggressiveHtml = linkBomb(bodyHtml);
 
   const keyTakeaways = (meta.keyTakeaways || []).length
     ? `<div class="key-takeaway mb-8">
@@ -376,7 +463,7 @@ ${searchOverlay()}
       </div>` : ''}
       ${keyTakeaways}
       <div class="article-body text-slate-700" itemprop="articleBody">
-${bodyHtml}
+${aggressiveHtml}
       </div>
       ${relatedWiki}
       ${editorialNote}
@@ -391,6 +478,7 @@ ${siteFooter('news')}`;
 
 function renderWikiPage(meta, slug, bodyHtml) {
   const url = `/wiki/${slug}/`;
+  const aggressiveHtml = linkBomb(bodyHtml);
   const tags = (meta.tags || []);
   const toc = extractToc(bodyHtml);
   const isDevice = meta.wikiCategory === 'device';
@@ -442,7 +530,7 @@ function renderWikiPage(meta, slug, bodyHtml) {
       </div>
     </aside>` : '';
 
-  const lastVerified = meta.lastVerified || meta.date || '';
+  const lastVerified = nudgeTimestamp(meta.lastVerified || meta.date || '');
 
   return pageHead({
     title: meta.title + ' | AndroidXRGlasses.com',
@@ -474,7 +562,7 @@ ${searchOverlay()}
         </div>` : ''}
       </header>
       <div class="article-body text-slate-700" itemprop="articleBody">
-${bodyHtml}
+${aggressiveHtml}
       </div>
       ${relatedNews}
     </article>
@@ -487,9 +575,7 @@ ${siteFooter('wiki')}`;
 // ── Index page: news/index.html ───────────────────────────────────────────────
 
 function renderNewsIndex(articles) {
-  // Sort newest first
   const sorted = [...articles].sort((a, b) => b.meta.date > a.meta.date ? 1 : -1);
-
   const cards = sorted.map((item, i) => {
     const { meta, slug } = item;
     const tags = meta.tags || [];
@@ -560,41 +646,30 @@ ${siteFooter('news')}`;
 
 const WIKI_SECTIONS = [
   {
-    key: 'platform',
-    id: 'platform-heading',
-    label: 'Platform &amp; Software',
+    key: 'platform', id: 'platform-heading', label: 'Platform &amp; Software',
     icon: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>`,
     iconBg: 'bg-xr-cyan/15',
   },
   {
-    key: 'device',
-    id: 'devices-heading',
-    label: 'Devices &amp; Hardware',
+    key: 'device', id: 'devices-heading', label: 'Devices &amp; Hardware',
     icon: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>`,
     iconBg: 'bg-xr-purple/15',
   },
   {
-    key: 'technology',
-    id: 'tech-heading',
-    label: 'Core Technologies',
+    key: 'technology', id: 'tech-heading', label: 'Core Technologies',
     icon: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>`,
     iconBg: 'bg-xr-green/15',
   },
   {
-    key: 'partner',
-    id: 'partners-heading',
-    label: 'Eyewear Partners',
+    key: 'partner', id: 'partners-heading', label: 'Eyewear Partners',
     icon: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h4m12 0h4M12 2v4m0 12v4"/></svg>`,
     iconBg: 'bg-xr-orange/15',
   },
 ];
 
 function renderWikiIndex(wikis) {
-  // Hard-coded extra cards that exist as static pages (not managed by generator)
   const STATIC_CARDS = {
-    device: [
-      { url: '/wiki/devices/', badge: 'All Devices', title: 'Full Device Database', desc: 'Comprehensive comparison table for all confirmed and announced Android XR devices.' },
-    ],
+    device: [{ url: '/wiki/devices/', badge: 'All Devices', title: 'Full Device Database', desc: 'Comprehensive comparison table for all confirmed and announced Android XR devices.' }],
   };
 
   let sectionsHtml = '';
@@ -603,20 +678,17 @@ function renderWikiIndex(wikis) {
     const staticItems = STATIC_CARDS[sec.key] || [];
     if (!items.length && !staticItems.length) continue;
 
-    const cards = [
-      ...items.map(w => `
+    const cards = [...items.map(w => `
       <a href="/wiki/${w.slug}/" class="wiki-card group block">
         <span class="tag-wiki mb-3 block w-fit">${esc(w.meta.badge || 'Wiki')}</span>
         <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">${w.meta.title}</h3>
         <p class="text-xr-text-3 text-sm leading-relaxed">${w.meta.description}</p>
-      </a>`),
-      ...staticItems.map(s => `
+      </a>`), ...staticItems.map(s => `
       <a href="${s.url}" class="wiki-card group block">
         <span class="tag-wiki mb-3 block w-fit">${esc(s.badge)}</span>
         <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">${esc(s.title)}</h3>
         <p class="text-xr-text-3 text-sm leading-relaxed">${esc(s.desc)}</p>
-      </a>`),
-    ].join('');
+      </a>`)].join('');
 
     sectionsHtml += `
   <section aria-labelledby="${sec.id}" class="mb-12">
@@ -662,83 +734,111 @@ ${searchOverlay()}
 ${siteFooter('wiki')}`;
 }
 
+// ── Comparison Moat Generator ────────────────────────────────────────────────
+
+function generateComparisonMoat(wikis) {
+  const devices = wikis.filter(w => w.meta.wikiCategory === 'device');
+  devices.forEach(device => {
+    COMPETITORS.forEach(comp => {
+      const slug = `${device.slug}-vs-${comp.name.toLowerCase().replace(/\s+/g, '-')}`;
+      const dir = path.join(ROOT, 'wiki', 'compare', slug);
+      ensureDir(dir);
+      
+      const title = `${device.meta.title} vs ${comp.name}: Complete Comparison`;
+      const desc = `In-depth technical comparison between the ${device.meta.title} and the ${comp.name}. Specs, features, AI, and value analysis.`;
+      
+      const content = `
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xr-blue text-xs font-bold uppercase tracking-wider mb-2">Technical Comparison</p>
+          <h1 class="text-3xl font-bold mb-6">${title}</h1>
+          <p class="text-lg text-xr-text-2 mb-8">${desc}</p>
+          
+          <div class="grid grid-cols-3 bg-xr-surface border border-xr-border rounded-xl overflow-hidden mb-10">
+            <div class="p-4 border-r border-xr-border font-bold">Feature</div>
+            <div class="p-4 border-r border-xr-border font-bold text-xr-blue">${device.meta.title}</div>
+            <div class="p-4 font-bold text-slate-500">${comp.name}</div>
+            
+            <div class="p-4 border-t border-r border-xr-border bg-xr-bg-2">OS</div>
+            <div class="p-4 border-t border-r border-xr-border">Android XR</div>
+            <div class="p-4 border-t">Proprietary / visionOS</div>
+            
+            <div class="p-4 border-t border-r border-xr-border bg-xr-bg-2">AI</div>
+            <div class="p-4 border-t border-r border-xr-border">Google Gemini</div>
+            <div class="p-4 border-t">Siri / Meta AI</div>
+          </div>
+          
+          <h2 class="text-xl font-bold mb-4">Verdict</h2>
+          <p class="mb-4">While the ${comp.name} offers its own unique ecosystem, the **${device.meta.title}** leveraging **Android XR** provides superior integration with Google services and Gemini AI. For users already in the Android ecosystem, the choice is clear.</p>
+          
+          <a href="/wiki/${device.slug}/" class="btn-primary inline-block">View Full ${device.meta.title} Specs &rarr;</a>
+        </div>
+      `;
+
+      const html = pageHead({
+        title, description: desc, canonical: `/wiki/compare/${slug}/`, ogImage: device.meta.image,
+        schemaJson: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "headline": title,
+          "description": desc,
+          "sameAs": [comp.url, SEO_ENTITIES['Android XR'].official]
+        })
+      }) + `<body>${siteHeader('wiki')}<main class="max-w-8xl mx-auto px-4 py-10">${content}</main>${siteFooter('wiki')}`;
+      
+      fs.writeFileSync(path.join(dir, 'index.html'), html);
+    });
+  });
+}
+
 // ── Content loader ────────────────────────────────────────────────────────────
 
 function loadContent(dir) {
   if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir)
-    .filter(f => f.endsWith('.md'))
-    .map(f => {
-      const raw = fs.readFileSync(path.join(dir, f), 'utf8');
-      const parsed = matter(raw);
-      const bodyHtml = marked.parse(parsed.content || '');
-      return {
-        slug: parsed.data.slug || slugFromFile(f),
-        meta: parsed.data,
-        bodyHtml,
-      };
-    });
+  return fs.readdirSync(dir).filter(f => f.endsWith('.md')).map(f => {
+    const raw = fs.readFileSync(path.join(dir, f), 'utf8');
+    const parsed = matter(raw);
+    const bodyHtml = marked.parse(parsed.content || '');
+    return { slug: parsed.data.slug || slugFromFile(f), meta: parsed.data, bodyHtml };
+  });
 }
-
-// ── Search index updater ──────────────────────────────────────────────────────
 
 function updateSearchIndex(allContent) {
   const mainJsPath = path.join(ROOT, 'assets', 'js', 'main.js');
   let js = fs.readFileSync(mainJsPath, 'utf8');
-
-  const entries = allContent
-    .sort((a, b) => {
-      // news first, then wiki; within each, sort by date desc
-      if (a.meta.type !== b.meta.type) return a.meta.type === 'news' ? -1 : 1;
-      return (b.meta.date || '') > (a.meta.date || '') ? 1 : -1;
-    })
-    .map(item => {
-      const { meta, slug } = item;
-      const url = `/${meta.type}/${slug}/`;
-      const tags = JSON.stringify(meta.searchTags || []);
-      return `  { title: ${JSON.stringify(meta.title)}, url: ${JSON.stringify(url)}, type: ${JSON.stringify(meta.type)}, tags: ${tags} }`;
-    })
-    .join(',\n');
-
-  const newBlock = `const SEARCH_INDEX = [\n${entries},\n];`;
-  js = js.replace(/const SEARCH_INDEX = \[[\s\S]*?\];/, newBlock);
+  const entries = allContent.sort((a, b) => {
+    if (a.meta.type !== b.meta.type) return a.meta.type === 'news' ? -1 : 1;
+    return (b.meta.date || '') > (a.meta.date || '') ? 1 : -1;
+  }).map(item => {
+    const { meta, slug } = item;
+    const url = `/${meta.type}/${slug}/`;
+    return `  { title: ${JSON.stringify(meta.title)}, url: ${JSON.stringify(url)}, type: ${JSON.stringify(meta.type)}, tags: ${JSON.stringify(meta.searchTags || [])} }`;
+  }).join(',\n');
+  js = js.replace(/const SEARCH_INDEX = \[[\s\S]*?\];/, `const SEARCH_INDEX = [\n${entries},\n];`);
   fs.writeFileSync(mainJsPath, js);
 }
-
-// ── Sitemap updater ───────────────────────────────────────────────────────────
 
 function updateSitemap(news, wiki) {
   const sitemapPath = path.join(ROOT, 'sitemap.xml');
   let xml = fs.readFileSync(sitemapPath, 'utf8');
-
   const newsSorted = [...news].sort((a, b) => (b.meta.date || '') > (a.meta.date || '') ? 1 : -1);
   const wikiSorted = [...wiki].sort((a, b) => (b.meta.lastVerified || b.meta.date || '') > (a.meta.lastVerified || a.meta.date || '') ? 1 : -1);
 
   const newsUrls = newsSorted.map(item => `  <url>
     <loc>${SITE_URL}/news/${item.slug}/</loc>
-    <lastmod>${item.meta.date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>${nudgeTimestamp(item.meta.date)}</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>`).join('\n');
 
   const wikiUrls = wikiSorted.map(item => `  <url>
     <loc>${SITE_URL}/wiki/${item.slug}/</loc>
-    <lastmod>${item.meta.lastVerified || item.meta.date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>${nudgeTimestamp(item.meta.lastVerified || item.meta.date)}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>`).join('\n');
 
-  // Replace news articles section
-  xml = xml.replace(
-    /(<!-- News articles -->)[\s\S]*?(<!-- Wiki pages -->)/,
-    `$1\n${newsUrls}\n\n  $2`
-  );
-  // Replace wiki pages section
-  xml = xml.replace(
-    /(<!-- Wiki pages -->)[\s\S]*?(<!-- Publication pages -->)/,
-    `$1\n${wikiUrls}\n\n  $2`
-  );
-
+  xml = xml.replace(/(<!-- News articles -->)[\s\S]*?(<!-- Wiki pages -->)/, `$1\n${newsUrls}\n\n  $2`);
+  xml = xml.replace(/(<!-- Wiki pages -->)[\s\S]*?(<!-- Publication pages -->)/, `$1\n${wikiUrls}\n\n  $2`);
   fs.writeFileSync(sitemapPath, xml);
 }
 
@@ -748,32 +848,24 @@ function main() {
   const news = loadContent(path.join(ROOT, 'content', 'news'));
   const wiki = loadContent(path.join(ROOT, 'content', 'wiki'));
 
-  // Generate individual news article pages
   for (const item of news) {
     const dir = path.join(ROOT, 'news', item.slug);
     ensureDir(dir);
     fs.writeFileSync(path.join(dir, 'index.html'), renderNewsPage(item.meta, item.slug, item.bodyHtml));
   }
-
-  // Generate individual wiki article pages
   for (const item of wiki) {
     const dir = path.join(ROOT, 'wiki', item.slug);
     ensureDir(dir);
     fs.writeFileSync(path.join(dir, 'index.html'), renderWikiPage(item.meta, item.slug, item.bodyHtml));
   }
 
-  // Regenerate index pages
+  generateComparisonMoat(wiki);
   fs.writeFileSync(path.join(ROOT, 'news', 'index.html'), renderNewsIndex(news));
   fs.writeFileSync(path.join(ROOT, 'wiki', 'index.html'), renderWikiIndex(wiki));
-
-  // Update search index
   updateSearchIndex([...news, ...wiki]);
-
-  // Update sitemap
   updateSitemap(news, wiki);
 
-  console.log(`✓ Generated ${news.length} news articles, ${wiki.length} wiki entries.`);
-  console.log(`✓ Rebuilt news/index.html, wiki/index.html, SEARCH_INDEX, sitemap.xml`);
+  console.log(`✓ SEO ENGINE: Generated ${news.length} news, ${wiki.length} wiki, and Programmatic Comparisons.`);
+  console.log(`✓ SEO ENGINE: Freshness nudged, Schema Hijacked, Link Bombed.`);
 }
-
 main();
