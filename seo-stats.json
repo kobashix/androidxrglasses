@@ -20,5 +20,41 @@
     },
     "engine_health": "ACTIVE",
     "freshness_loop": "OPTIMIZED"
+  },
+  {
+    "timestamp": "2026-04-26T17:59:25.996Z",
+    "content": {
+      "news_articles": 7,
+      "wiki_entries": 11,
+      "comparison_pages": 8,
+      "total_indexed_paths": 26
+    },
+    "technical_health": {
+      "sitemap_ok": true,
+      "news_sitemap_ok": true,
+      "robots_ok": true,
+      "sitemap_urls": 22,
+      "css_minified_size": "26.0KB"
+    },
+    "engine_state": "ACTIVE",
+    "freshness": "OPTIMIZED"
+  },
+  {
+    "timestamp": "2026-04-26T18:04:29.621Z",
+    "content": {
+      "news_articles": 7,
+      "wiki_entries": 11,
+      "comparison_pages": 8,
+      "total_indexed_paths": 26
+    },
+    "technical_health": {
+      "sitemap_ok": true,
+      "news_sitemap_ok": true,
+      "robots_ok": true,
+      "sitemap_urls": 22,
+      "css_minified_size": "26.0KB"
+    },
+    "engine_state": "ACTIVE",
+    "freshness": "OPTIMIZED"
   }
 ]

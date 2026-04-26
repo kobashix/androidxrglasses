@@ -370,41 +370,45 @@ EDITORIAL NOTE — Source disclosure, independence statement, links to /editoria
 
 ---
 
-## 6. Deployment
+## 6. Deployment & Automation
+
+### Automated SEO Engine
+
+The site uses a custom Node.js generator (`scripts/generate.js`) to handle:
+- **Markdown-to-HTML conversion** with built-in templates.
+- **Link Bombing:** Automatic internal linking for high-value keywords.
+- **FAQ Bombing:** Injection of JSON-LD FAQ schema.
+- **Semantic Clouding:** Invisible keyword injection for LSI saturation.
+- **Comparison Moats:** Automated generation of device comparison pages.
+- **Search Indexing:** Syncing content to `assets/js/main.js`.
 
 ### Build & Deploy Commands
 
 ```bash
-# Install dependencies
-npm install
+# 1. Generate content and update search index
+node scripts/generate.js
 
-# Compile Tailwind CSS
+# 2. Compile Tailwind CSS
 npm run build
-# → outputs: assets/css/tailwind.css (minified, purged)
 
-# Deploy to Cloudflare Pages
+# 3. Audit SEO Health
+node scripts/monitor.js
+
+# 4. Deploy to Cloudflare Pages
 CLOUDFLARE_ACCOUNT_ID=5335e62d18861c4b58dbf632be4a73bc \
   npx wrangler pages deploy . \
   --project-name androidxrglasses \
   --commit-dirty=true
-
-# After deployment: ping Google News sitemap
-curl "https://www.google.com/ping?sitemap=https://androidxrglasses.com/sitemaps/news-sitemap.xml"
-
-# After deployment: ping main sitemap
-curl "https://www.google.com/ping?sitemap=https://androidxrglasses.com/sitemap.xml"
 ```
 
-### Publishing Workflow (New Article)
+### Success Monitor
 
-1. Create `/news/article-slug/index.html` from template
-2. Add `NewsArticle` schema with exact publication timestamp
-3. Add to `sitemap.xml`
-4. Update `sitemaps/news-sitemap.xml` (add new article, remove >48hr articles)
-5. `npm run build` (if new Tailwind classes added)
-6. Deploy to Cloudflare Pages
-7. Ping Google sitemap endpoints
-8. Share on Twitter/X @AndroidXRGlass
+The `scripts/monitor.js` utility tracks the following metrics in `seo-stats.json`:
+- **Content Footprint:** Counts of news, wiki, and comparison pages.
+- **Technical Health:** Verification of sitemaps, robots.txt, and CSS bundle size.
+- **Sitemap Coverage:** Real-time URL counts compared to directory structure.
+
+Review this monitor daily to ensure the site's footprint is growing and technical health is maintained.
 
 ---
 
