@@ -6,6 +6,7 @@
   <title>Android XR Encyclopedia — Wiki Index | AndroidXRGlasses.com</title>
   <meta name="description" content="Browse the complete Android XR encyclopedia: platform overviews, device specifications, display technology, AI features, and eyewear partner profiles.">
   <link rel="canonical" href="https://androidxrglasses.com/wiki/">
+  
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +16,11 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:#fff;color:#0f172a;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}.skip-link{position:absolute;top:-100px;left:1rem;background:#2563eb;color:#fff;padding:.5rem 1rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.875rem;transition:top .2s;z-index:9999}.skip-link:focus{top:0}</style>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Android XR Encyclopedia",
-    "description": "Encyclopedia entries for Android XR platform, devices, technology, and eyewear partnerships.",
-    "url": "https://androidxrglasses.com/wiki/",
-    "publisher": { "@type": "Organization", "@id": "https://androidxrglasses.com/#organization" }
-  }
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"Android XR Encyclopedia","description":"Encyclopedia entries for Android XR platform, devices, technology, and eyewear partnerships.","url":"https://androidxrglasses.com/wiki/","publisher":{"@type":"Organization","@id":"https://androidxrglasses.com/#organization"}}
   </script>
 </head>
 <body>
+
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header id="site-header" class="sticky top-0 z-40 bg-xr-header border-b border-xr-header-2" role="banner">
   <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
@@ -34,8 +29,8 @@
       <span class="text-white font-bold text-sm hidden sm:block">AndroidXR<span class="text-blue-400">Glasses</span><span class="text-slate-500">.com</span></span>
     </a>
     <nav class="hidden md:flex items-center gap-0.5" aria-label="Primary navigation">
-      <a href="/news/"         class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">News</a>
-      <a href="/wiki/"         class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800 text-white" aria-current="page">Wiki</a>
+      <a href="/news/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">News</a>
+      <a href="/wiki/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800 text-white" aria-current="page">Wiki</a>
       <a href="/wiki/devices/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">Devices</a>
       <a href="/wiki/compare/" class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">Compare</a>
       <a href="/about/"        class="nav-link px-3 py-2 rounded-lg hover:bg-slate-800">About</a>
@@ -52,80 +47,65 @@
   </div>
   <nav id="mobile-menu" class="md:hidden hidden border-t border-slate-800" aria-label="Mobile navigation">
     <div class="max-w-8xl mx-auto px-4 py-4 flex flex-col gap-1">
-      <a href="/news/" class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">News</a>
-      <a href="/wiki/" class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">Wiki</a>
+      <a href="/news/"         class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">News</a>
+      <a href="/wiki/"         class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">Wiki</a>
       <a href="/wiki/devices/" class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">Devices</a>
-      <a href="/about/" class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">About</a>
+      <a href="/about/"        class="nav-link px-3 py-2.5 rounded-lg hover:bg-slate-800">About</a>
     </div>
   </nav>
 </header>
-<div id="search-overlay" class="fixed inset-0 z-50 bg-black/50 hidden" style="backdrop-filter:blur(12px)" role="dialog" aria-modal="true" aria-label="Site search">
+
+<div id="search-overlay" class="fixed inset-0 z-50 bg-black/50 hidden" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)" role="dialog" aria-modal="true" aria-label="Site search">
   <div class="max-w-2xl mx-auto mt-20 px-4">
     <div class="bg-white border border-xr-border rounded-xl overflow-hidden shadow-2xl">
       <div class="flex items-center gap-3 px-4 py-3.5 border-b border-xr-border">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b9ab5" stroke-width="2" class="shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input id="search-input" type="search" placeholder="Search wiki topics&hellip;" class="flex-1 bg-transparent text-xr-text-1 placeholder-xr-muted outline-none text-sm">
-        <button id="search-close" class="text-xr-text-3 text-xs font-mono border border-xr-border rounded px-1.5 py-0.5" aria-label="Close">ESC</button>
+        <input id="search-input" type="search" placeholder="Search news, devices, wiki&hellip;" class="flex-1 bg-transparent text-xr-text-1 placeholder-xr-muted outline-none text-sm">
+        <button id="search-close" class="text-slate-400 hover:text-white text-xs font-mono border border-xr-border rounded px-1.5 py-0.5" aria-label="Close search">ESC</button>
       </div>
-      <div id="search-results" class="p-4 max-h-96 overflow-y-auto"><p class="text-xr-text-3 text-sm text-center py-6">Start typing&hellip;</p></div>
+      <div id="search-results" class="p-4 max-h-96 overflow-y-auto">
+        <p class="text-xr-text-3 text-sm text-center py-6">Start typing to search&hellip;</p>
+      </div>
     </div>
   </div>
 </div>
-
 <main id="main-content" class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
   <nav class="breadcrumb mb-8" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="breadcrumb-sep" aria-hidden="true">/</span>
     <span class="text-xr-text-1">Wiki</span>
   </nav>
-
   <div class="mb-10">
     <p class="section-label mb-1">Encyclopedia</p>
     <h1 class="text-3xl font-bold">Android XR Wiki</h1>
     <p class="text-xr-text-3 mt-2 text-sm">Verified reference entries for every Android XR device, technology, and partner.</p>
   </div>
-
-  <!-- Platform -->
+  
   <section aria-labelledby="platform-heading" class="mb-12">
     <h2 id="platform-heading" class="text-lg font-bold mb-5 flex items-center gap-2">
       <span class="w-6 h-6 rounded bg-xr-cyan/15 flex items-center justify-center" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span>
       Platform &amp; Software
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      
       <a href="/wiki/android-xr-platform/" class="wiki-card group block">
         <span class="tag-wiki mb-3 block w-fit">Core Platform</span>
         <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Android XR Platform</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">Complete history, architecture, and technical breakdown of Google&#8217;s XR operating system.</p>
-      </a>
-      <a href="/wiki/device-types/" class="wiki-card group block">
-        <span class="tag-wiki mb-3 block w-fit">Hardware Guide</span>
-        <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Device Form Factors</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">Understand the difference between MR headsets, AR glasses, and audio-only AI frames.</p>
-      </a>
-      <a href="/wiki/gemini-ai-android-xr/" class="wiki-card group block">
-        <span class="tag-wiki mb-3 block w-fit">AI</span>
-        <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Gemini AI on Android XR</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">Live translation, navigation, real-world assistance. How Gemini functions as the platform-level AI on Android XR devices.</p>
+        <p class="text-xr-text-3 text-sm leading-relaxed">Complete history, architecture, and technical breakdown of Google's XR operating system.</p>
       </a>
     </div>
   </section>
-
-  <!-- Devices -->
   <section aria-labelledby="devices-heading" class="mb-12">
     <h2 id="devices-heading" class="text-lg font-bold mb-5 flex items-center gap-2">
       <span class="w-6 h-6 rounded bg-xr-purple/15 flex items-center justify-center" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span>
       Devices &amp; Hardware
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      
       <a href="/wiki/samsung-galaxy-xr/" class="wiki-card group block">
-        <span class="tag-hardware mb-3 block w-fit">Available Now — $1,800</span>
+        <span class="tag-wiki mb-3 block w-fit">Available Now — $1,800</span>
         <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Samsung Galaxy XR</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">Full specs: dual 3552&times;3840 Micro-OLED, Snapdragon XR2+ Gen 2, 16GB RAM, 109&deg; FOV. The world&#8217;s first Android XR device.</p>
-      </a>
-      <a href="/wiki/xreal-project-aura/" class="wiki-card group block">
-        <span class="tag-wiki mb-3 block w-fit">2026</span>
-        <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">XREAL Project Aura</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">Optical see-through AR glasses with 70&deg; FOV running Android XR natively. Revealed at CES 2026.</p>
+        <p class="text-xr-text-3 text-sm leading-relaxed">Full specs: dual 3552×3840 Micro-OLED, Snapdragon XR2+ Gen 2, 16GB RAM, 109° FOV. The world's first Android XR device.</p>
       </a>
       <a href="/wiki/devices/" class="wiki-card group block">
         <span class="tag-wiki mb-3 block w-fit">All Devices</span>
@@ -134,51 +114,33 @@
       </a>
     </div>
   </section>
-
-  <!-- Technology -->
   <section aria-labelledby="tech-heading" class="mb-12">
     <h2 id="tech-heading" class="text-lg font-bold mb-5 flex items-center gap-2">
       <span class="w-6 h-6 rounded bg-xr-green/15 flex items-center justify-center" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
       Core Technologies
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      
       <a href="/wiki/raxium-microled/" class="wiki-card group block">
         <span class="tag-wiki mb-3 block w-fit">Display</span>
         <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Raxium MicroLED Technology</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">Google&#8217;s $1.4B Raxium acquisition explained. The MicroLED display breakthrough enabling bright, power-efficient XR glasses.</p>
+        <p class="text-xr-text-3 text-sm leading-relaxed">Google's $1.4B Raxium acquisition explained. The MicroLED display breakthrough enabling bright, power-efficient XR glasses.</p>
+      </a>
+      <a href="/wiki/snapdragon-xr2-plus-gen-3/" class="wiki-card group block">
+        <span class="tag-wiki mb-3 block w-fit">Wiki</span>
+        <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Qualcomm Snapdragon XR2+ Gen 3</h3>
+        <p class="text-xr-text-3 text-sm leading-relaxed">The next-generation spatial computing platform from Qualcomm, specifically optimized for Android XR glasses and headsets launching in H2 2026.</p>
       </a>
     </div>
   </section>
-
-  <!-- Eyewear Partners -->
-  <section aria-labelledby="partners-heading" class="mb-12">
-    <h2 id="partners-heading" class="text-lg font-bold mb-5 flex items-center gap-2">
-      <span class="w-6 h-6 rounded bg-xr-orange/15 flex items-center justify-center" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h4m12 0h4M12 2v4m0 12v4"/></svg></span>
-      Eyewear Partners
-    </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <a href="/wiki/warby-parker-android-xr/" class="wiki-card group block">
-        <span class="tag-wiki mb-3 block w-fit">Partner</span>
-        <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Warby Parker &times; Android XR</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">$150M Google investment. Mass-market Android XR glasses for everyday consumers.</p>
-      </a>
-      <a href="/wiki/gentle-monster-android-xr/" class="wiki-card group block">
-        <span class="tag-wiki mb-3 block w-fit">Partner</span>
-        <h3 class="font-semibold text-xr-text-1 group-hover:text-xr-blue transition-colors mb-2">Gentle Monster &times; Android XR</h3>
-        <p class="text-xr-text-3 text-sm leading-relaxed">South Korean luxury eyewear brand bringing avant-garde design to Android XR smart glasses.</p>
-      </a>
-    </div>
-  </section>
-
 </main>
 
-<footer class="border-t border-xr-border bg-xr-header mt-8" role="contentinfo">
+<footer class="border-t border-xr-border bg-xr-header mt-12" role="contentinfo">
   <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
     <p class="text-xr-muted">&copy; 2026 AndroidXRGlasses.com. Not affiliated with Google LLC or Samsung Electronics.</p>
     <div class="flex items-center gap-5">
-      <a href="/news/"             class="text-xr-muted hover:text-xr-text-3 transition-colors">News</a>
+      <a href="/wiki/devices/" class="text-xr-muted hover:text-xr-text-3 transition-colors">Device Database</a>
       <a href="/editorial-policy/" class="text-xr-muted hover:text-xr-text-3 transition-colors">Editorial Policy</a>
-      <a href="/about/"            class="text-xr-muted hover:text-xr-text-3 transition-colors">About</a>
     </div>
   </div>
 </footer>

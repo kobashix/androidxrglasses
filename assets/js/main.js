@@ -6,23 +6,16 @@
 
 // ─── Search ────────────────────────────────────────────────────────────────
 const SEARCH_INDEX = [
-  // News
-  { title: 'Samsung Android XR Glasses Confirmed for H2 2026', url: '/news/samsung-android-xr-glasses-2026/', type: 'news', tags: ['Samsung', 'glasses', '2026'] },
-  { title: 'CES 2026: Smart Glasses Everywhere, But Android XR Looms Largest', url: '/news/ces-2026-android-xr-smart-glasses/', type: 'news', tags: ['CES', 'smart glasses'] },
-  { title: "Google's $150M Warby Parker Bet: Inside the Android XR Strategy", url: '/news/google-warby-parker-150m-android-xr/', type: 'news', tags: ['Warby Parker', 'Google', 'investment'] },
-  { title: 'Gucci, Balenciaga & Alexander McQueen Coming to Android XR', url: '/news/kering-eyewear-android-xr-gucci/', type: 'news', tags: ['Kering', 'Gucci', 'Balenciaga'] },
-  { title: 'Samsung Galaxy XR Review: The First Android XR Device', url: '/news/samsung-galaxy-xr-review/', type: 'news', tags: ['review', 'Samsung', 'Galaxy XR'] },
-  // Wiki
-  { title: 'Android XR Platform — Complete Technical Reference', url: '/wiki/android-xr-platform/', type: 'wiki', tags: ['platform', 'Google', 'OS'] },
-  { title: 'Device Types & Form Factors — Headsets vs Glasses', url: '/wiki/device-types/', type: 'wiki', tags: ['headset', 'AR', 'glasses', 'AI frames'] },
-  { title: 'Samsung Galaxy XR — Full Specifications', url: '/wiki/samsung-galaxy-xr/', type: 'wiki', tags: ['Samsung', 'headset', 'specs'] },
-  { title: 'XREAL Project Aura — Specifications & Overview', url: '/wiki/xreal-project-aura/', type: 'wiki', tags: ['XREAL', 'AR', 'glasses'] },
-  { title: 'Gemini AI on Android XR — Features & Integration', url: '/wiki/gemini-ai-android-xr/', type: 'wiki', tags: ['Gemini', 'AI', 'Google'] },
-  { title: 'Raxium MicroLED Technology — Display Deep Dive', url: '/wiki/raxium-microled/', type: 'wiki', tags: ['Raxium', 'MicroLED', 'display'] },
-  { title: 'Device Database — All Android XR Devices', url: '/wiki/devices/', type: 'wiki', tags: ['devices', 'database', 'comparison'] },
-  { title: 'Compare Devices — Android XR vs. Apple & Meta', url: '/wiki/compare/', type: 'wiki', tags: ['comparison', 'Apple', 'Meta', 'benchmark'] },
-  { title: 'Warby Parker × Android XR Partnership', url: '/wiki/warby-parker-android-xr/', type: 'wiki', tags: ['Warby Parker', 'glasses', 'partnership'] },
-  { title: 'Gentle Monster × Android XR Partnership', url: '/wiki/gentle-monster-android-xr/', type: 'wiki', tags: ['Gentle Monster', 'glasses', 'fashion'] },
+  { title: "Google I/O 2026 Preview: Android XR 2.0, Gemini 2.0, and the 'Aura' Glasses Revolution", url: "/news/google-io-2026-preview-android-xr/", type: "news", tags: ["Google I/O",2026,"Android XR 2.0","Gemini 2.0","smart glasses","rumors"] },
+  { title: "Samsung Android XR Glasses Confirmed for H2 2026: 12MP Camera, Gesture Controls, Two Models", url: "/news/samsung-android-xr-glasses-2026/", type: "news", tags: ["Samsung","Android XR","smart glasses",2026,"Qualcomm","Gemini AI"] },
+  { title: "CES 2026: Smart Glasses Everywhere, But Android XR's Promise Looms Largest", url: "/news/ces-2026-android-xr-smart-glasses/", type: "news", tags: ["CES 2026","Android XR","smart glasses","XREAL","Meta"] },
+  { title: "Google's $150M Warby Parker Bet: Inside the Android XR Eyewear Strategy", url: "/news/google-warby-parker-150m-android-xr/", type: "news", tags: ["Warby Parker","Google","Android XR","investment","eyewear"] },
+  { title: "Gucci, Balenciaga & Alexander McQueen Glasses Are Coming to Android XR", url: "/news/kering-eyewear-android-xr-gucci/", type: "news", tags: ["Kering","Gucci","Balenciaga","Android XR","fashion","luxury"] },
+  { title: "Samsung Galaxy XR Review: The First Android XR Device Is Here — At a Price", url: "/news/samsung-galaxy-xr-review/", type: "news", tags: ["review","Samsung","Galaxy XR","headset"] },
+  { title: "Qualcomm Snapdragon XR2+ Gen 3", url: "/wiki/snapdragon-xr2-plus-gen-3/", type: "wiki", tags: ["Qualcomm","Snapdragon XR2+ Gen 3","chipset","processor","specs"] },
+  { title: "Samsung Galaxy XR", url: "/wiki/samsung-galaxy-xr/", type: "wiki", tags: ["Samsung","Galaxy XR","headset","specs","price"] },
+  { title: "Android XR Platform", url: "/wiki/android-xr-platform/", type: "wiki", tags: ["Android XR","platform","Google","OS","architecture"] },
+  { title: "Raxium MicroLED Technology", url: "/wiki/raxium-microled/", type: "wiki", tags: ["Raxium","MicroLED","display","Google","technology"] },
 ];
 
 function initSearch() {
