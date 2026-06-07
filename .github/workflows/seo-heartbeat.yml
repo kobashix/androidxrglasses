@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,14 +42,5 @@ jobs:
           git add .
           if ! git diff --quiet --cached; then
             git commit -m "🤖 SEO HEARTBEAT: Automated Freshness Nudge [skip ci]"
-            git push
+            git push https://${{ github.token }}@github.com/${{ github.repository }}.git HEAD:master
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy . --project-name androidxrglasses --commit-dirty=true
-        env:
-          CLOUDFLARE_ACCOUNT_ID: "5335e62d18861c4b58dbf632be4a73bc"
-          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
-          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
