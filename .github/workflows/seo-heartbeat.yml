@@ -8,6 +8,8 @@ on:
 jobs:
   heartbeat:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -29,12 +31,20 @@ jobs:
       - name: Rebuild Tailwind CSS
         run: npm run build
 
+      - name: Run SEO Success Audit
+        run: node scripts/monitor.js
+
       - name: Commit Freshness Nudges
         run: |
-          git config --global user.name "SEO Heartbeat Bot"
-          git config --global user.email "bot@androidxrglasses.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 SEO HEARTBEAT: Automated Freshness Nudge [skip ci]" && git push)
+          if ! git diff --quiet --cached; then
+            git commit -m "🤖 SEO HEARTBEAT: Automated Freshness Nudge [skip ci]"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy . --project-name androidxrglasses --commit-dirty=true
