@@ -56,5 +56,23 @@
     },
     "engine_state": "ACTIVE",
     "freshness": "OPTIMIZED"
+  },
+  {
+    "timestamp": "2026-06-07T13:26:32.999Z",
+    "content": {
+      "news_articles": 7,
+      "wiki_entries": 11,
+      "comparison_pages": 8,
+      "total_indexed_paths": 26
+    },
+    "technical_health": {
+      "sitemap_ok": true,
+      "news_sitemap_ok": true,
+      "robots_ok": true,
+      "sitemap_urls": 22,
+      "css_minified_size": "26.0KB"
+    },
+    "engine_state": "ACTIVE",
+    "freshness": "OPTIMIZED"
   }
 ]
