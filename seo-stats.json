@@ -1,23 +1,5 @@
 [
   {
-    "timestamp": "2026-07-06T15:16:30.506Z",
-    "content": {
-      "news_articles": 7,
-      "wiki_entries": 11,
-      "comparison_pages": 8,
-      "total_indexed_paths": 26
-    },
-    "technical_health": {
-      "sitemap_ok": true,
-      "news_sitemap_ok": true,
-      "robots_ok": true,
-      "sitemap_urls": 22,
-      "css_minified_size": "26.0KB"
-    },
-    "engine_state": "ACTIVE",
-    "freshness": "OPTIMIZED"
-  },
-  {
     "timestamp": "2026-07-07T02:26:16.914Z",
     "content": {
       "news_articles": 7,
@@ -523,6 +505,24 @@
   },
   {
     "timestamp": "2026-07-21T01:58:36.303Z",
+    "content": {
+      "news_articles": 7,
+      "wiki_entries": 11,
+      "comparison_pages": 8,
+      "total_indexed_paths": 26
+    },
+    "technical_health": {
+      "sitemap_ok": true,
+      "news_sitemap_ok": true,
+      "robots_ok": true,
+      "sitemap_urls": 22,
+      "css_minified_size": "26.0KB"
+    },
+    "engine_state": "ACTIVE",
+    "freshness": "OPTIMIZED"
+  },
+  {
+    "timestamp": "2026-07-21T13:21:50.082Z",
     "content": {
       "news_articles": 7,
       "wiki_entries": 11,
